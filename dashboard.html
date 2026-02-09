@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Web TV</h1>
+        <div id="app-grid" class="grid">
+            </div>
+    </div>
+
+    <div id="context-menu" class="context-menu">
+        <div class="menu-item" id="ctx-edit">Edit App</div>
+        <div class="menu-item delete" id="ctx-delete">Delete App</div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal">
+            <h2 id="modal-title">Add App</h2>
+            
+            <input type="hidden" id="app-id">
+            
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" id="app-title" placeholder="e.g. YouTube">
+            </div>
+            
+            <div class="form-group">
+                <label>URL</label>
+                <input type="url" id="app-url" placeholder="https://...">
+            </div>
+            
+            <div class="form-group">
+                <label>Icon URL (Optional)</label>
+                <input type="url" id="app-icon" placeholder="https://...">
+            </div>
+
+            <div class="modal-buttons">
+                <button id="btn-cancel" class="btn secondary">Cancel</button>
+                <button id="btn-save" class="btn primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

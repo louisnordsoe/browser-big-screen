@@ -1,0 +1,80 @@
+/* Container */
+#tv-os-host {
+    /* Ensure our host doesn't block clicks when hidden */
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2147483647;
+}
+
+#tv-sidebar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    pointer-events: none; /* Let clicks pass through */
+    font-family: sans-serif;
+}
+
+/* The Visible Sidebar */
+#sidebar {
+    width: 80px;
+    height: 100%;
+    background: #121212; /* Solid background so we don't see content underneath */
+    border-left: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    
+    /* Start Hidden off-screen */
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    pointer-events: auto; /* Enable clicks on the bar itself */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+#sidebar.active {
+    transform: translateX(0);
+}
+
+/* Styling for Buttons */
+.sidebar-btn {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+    font-size: 20px;
+    border: 1px solid transparent;
+}
+
+.sidebar-btn:hover {
+    background: #0d6efd;
+    transform: scale(1.1);
+}
+
+.sidebar-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.separator {
+    width: 40px;
+    height: 1px;
+    background: #333;
+    margin: 5px 0 15px 0;
+}
